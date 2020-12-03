@@ -1,0 +1,28 @@
+server:
+  port: 8092
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://b658626e159e51:87c04634@us-cdbr-east-02.cleardb.com/heroku_9cbd7dc823bf4da?reconnect=true
+    username: b658626e159e51
+    password: 87c04634
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://0.0.0.0:8099/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
